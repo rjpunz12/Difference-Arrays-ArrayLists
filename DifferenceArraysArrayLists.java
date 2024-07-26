@@ -1,58 +1,40 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class DifferenceArraysArrayLists {
-
     public static void main(String[] args) {
-        // Arrays
-        int[] array = {1, 2, 3, 4, 5};
-        System.out.println("Array: " + Arrays.toString(array));
-
-        // ArrayLists
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        arrayList.add(1);
-        arrayList.add(2);
-        arrayList.add(3);
-        arrayList.add(4);
-        arrayList.add(5);
-        System.out.println("ArrayList: " + arrayList);
-
-        // Accessing elements
-        int elementFromArray = array[2];
-        int elementFromArrayList = arrayList.get(2);
-        System.out.println("Element at index 2 in array: " + elementFromArray);
-        System.out.println("Element at index 2 in ArrayList: " + elementFromArrayList);
-
-        // Modifying elements
-        array[2] = 10;
-        arrayList.set(2, 10);
-        System.out.println("Modified array: " + Arrays.toString(array));
-        System.out.println("Modified ArrayList: " + arrayList);
-
-        // Size
-        int sizeOfArray = array.length;
-        int sizeOfArrayList = arrayList.size();
-        System.out.println("Size of array: " + sizeOfArray);
-        System.out.println("Size of ArrayList: " + sizeOfArrayList);
-
-        // Adding elements
-        // Arrays cannot dynamically grow, so a new array must be created
-        int[] newArray = Arrays.copyOf(array, array.length + 1);
-        newArray[array.length] = 6;
-        System.out.println("New array with added element: " + Arrays.toString(newArray));
-
-        // ArrayLists can dynamically grow
-        arrayList.add(6);
-        System.out.println("New ArrayList with added element: " + arrayList);
-
-        // Iterating through elements
-        System.out.println("Iterating through array elements:");
-        for (int value : array) {
-            System.out.print(value + " ");
+        // Array Example
+        int[] intArray = new int[5]; // Fixed size
+        intArray[0] = 10;
+        intArray[1] = 20;
+        intArray[2] = 30;
+        intArray[3] = 40;
+        intArray[4] = 50;
+        
+        // Accessing array elements
+        System.out.println("Array elements:");
+        for (int i = 0; i < intArray.length; i++) {
+            System.out.println(intArray[i]);
         }
-        System.out.println("\nIterating through ArrayList elements:");
-        for (int value : arrayList) {
-            System.out.print(value + " ");
+
+        // ArrayList Example
+        ArrayList<Integer> intList = new ArrayList<>(); // Dynamic size
+        intList.add(10); // Adding elements
+        intList.add(20);
+        intList.add(30);
+        intList.add(40);
+        intList.add(50);
+        
+        // Accessing ArrayList elements
+        System.out.println("ArrayList elements:");
+        for (int i = 0; i < intList.size(); i++) {
+            System.out.println(intList.get(i));
+        }
+
+        // Demonstrating dynamic resizing
+        intList.add(60);
+        System.out.println("ArrayList elements after adding another element:");
+        for (int i = 0; i < intList.size(); i++) {
+            System.out.println(intList.get(i));
         }
     }
 }
